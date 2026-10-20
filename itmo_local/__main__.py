@@ -85,9 +85,12 @@ def demo() -> None:
         first = render_event(active[0], settings)
         if 'BEGIN:VEVENT' not in first or 'X-ITMO-LOCAL-SYNC:V1' not in first:
             raise SafeError('demo_invalid_ical')
-        print('DEMO OK. Только вымышленные занятия; iCloud/my.itmo не вызывались.')
+        # ASCII-only on purpose: GitHub Windows runners may redirect Python stdout
+        # through a legacy code page such as cp1252. This offline smoke test
+        # must not fail solely because the terminal cannot encode Cyrillic.
+        print('DEMO OK. Synthetic lessons only; iCloud/my.itmo were not contacted.')
         print(canonical(counts))
-        print('UID сохранён в SQLite; в реальном режиме отправка выполняется отдельным этапом.')
+        print('Synthetic UID stored in disposable SQLite; publishing is a separate step.')
 
 
 def run_source(settings, store, protected, *, approve_digest=None):

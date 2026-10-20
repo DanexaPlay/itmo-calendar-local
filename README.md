@@ -4,7 +4,7 @@
 
 **[Русская инструкция](README_RU.md)** · [Windows setup](docs/SETUP_WINDOWS_RU.md) (Russian) · [Security](SECURITY.md) · [Contributing](CONTRIBUTING.md)
 
-> **Public beta v0.5.0**, Windows 10/11, 64-bit Python 3.12 or 3.13, Microsoft Edge or Chrome, iCloud account. Not endorsed by ITMO University or Apple. Check ITMO's terms and authorization requirements before automating your account. Browser automation and undocumented endpoints may stop working at any time.
+> **Public beta v0.5.1**, Windows 10/11, 64-bit Python 3.12 or 3.13, Microsoft Edge or Chrome, iCloud account. Not endorsed by ITMO University or Apple. Check ITMO's terms and authorization requirements before automating your account. Browser automation and undocumented endpoints may stop working at any time.
 
 ## Features
 
@@ -44,7 +44,7 @@ The Windows schedule works only with the computer on and the relevant user signe
 python -m pip install -e '.[dev]'
 python -m pytest -q
 python -m itmo_local demo
-python tools/build_release.py --output dist/itmo-calendar-local-v0.5.0-windows.zip
+python tools/build_release.py --output dist/itmo-calendar-local-v0.5.1-windows.zip
 ```
 
 Non-Windows runs support the offline synthetic demo and unit tests; real operations require Windows DPAPI. See [project architecture](docs/ARCHITECTURE_RU.md), [security policy](SECURITY.md), [contribution guide](CONTRIBUTING.md) and [MIT license](LICENSE).

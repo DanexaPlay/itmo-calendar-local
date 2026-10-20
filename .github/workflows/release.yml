@@ -5,6 +5,9 @@ on:
     tags:
       - 'v[0-9]*'
 
+env:
+  PYTHONUTF8: '1'
+
 permissions:
   contents: read
 

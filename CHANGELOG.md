@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.5.1 — Windows CI compatibility hotfix (2026-10)
+
+- Fix offline demo failing with `unexpected_internal_error` when Python stdout
+  uses a legacy Windows code page that cannot encode Cyrillic.
+- Enable UTF-8 mode for Python in GitHub Actions and use ASCII-only output
+  for the demo smoke test.
+- Add a subprocess regression test that forces `cp1252:strict` output.
+- No change to timetable, iCloud synchronization or saved user data.
+
 ## 0.5.0 — public beta (2026-10)
 
 - First GitHub-ready public repository; MIT license, privacy/security guides,

@@ -1,6 +1,6 @@
 # Авторизация ITMO.ID: browser-режим и официальный OAuth
 
-**Основной режим v0.5.0 — `ITMO_AUTH_METHOD=browser`.** Он открывает
+**Основной режим v0.5.1 — `ITMO_AUTH_METHOD=browser`.** Он открывает
 официальный my.itmo в отдельном профиле браузера Playwright. Пользователь
 самостоятельно проходит вход/MFA на сайте. Python не запрашивает пароль
 университета, не экспортирует cookies, Authorization, access/refresh-токены.

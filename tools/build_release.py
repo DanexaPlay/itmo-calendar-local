@@ -1,7 +1,7 @@
 """Build a user-installable, allowlist-only ZIP. Never zip the working tree.
 
 Example:
-    python tools/build_release.py --output dist/itmo-calendar-local-v0.5.0-windows.zip
+    python tools/build_release.py --output dist/itmo-calendar-local-v0.5.1-windows.zip
 
 Only explicitly enumerated source files can enter the ZIP. No personal state,
 .env file, browser profile, .git files, logs, caches, secrets or test data.

@@ -27,7 +27,7 @@
 git init -b main
 git add .
 git status --short
-git commit -m "Initial public beta: ITMO Calendar Local 0.5.0"
+git commit -m "Initial public beta: ITMO Calendar Local 0.5.1"
 git remote add origin https://github.com/<YOUR_USERNAME>/itmo-calendar-local.git
 git push -u origin main
 ```
@@ -50,7 +50,7 @@ Linux, собирает Python wheel и релизный ZIP. Ни GitHub Action
 .\.venv\Scripts\python.exe -m pip install -e ".[dev]"
 .\.venv\Scripts\python.exe -m pytest -q
 .\.venv\Scripts\python.exe -m itmo_local demo
-.\.venv\Scripts\python.exe tools\build_release.py --output dist\itmo-calendar-local-v0.5.0-windows.zip
+.\.venv\Scripts\python.exe tools\build_release.py --output dist\itmo-calendar-local-v0.5.1-windows.zip
 ```
 
 ## 4. GitHub Release
@@ -58,8 +58,8 @@ Linux, собирает Python wheel и релизный ZIP. Ни GitHub Action
 Только когда CI прошёл и инструкции были проверены на чистой Windows-машине:
 
 ```powershell
-git tag v0.5.0
-git push origin v0.5.0
+git tag v0.5.1
+git push origin v0.5.1
 ```
 
 `.github/workflows/release.yml` проверяет соответствие тега версии из
@@ -69,7 +69,7 @@ source distribution и `SHA256SUMS.txt`, затем создаёт GitHub Releas
 остальные workflows — только чтение.
 
 Пользователям в README и описании релиза лучше давать ссылку именно на
-`itmo-calendar-local-v0.5.0-windows.zip`, а не на GitHub **Source code (zip)**,
+`itmo-calendar-local-v0.5.1-windows.zip`, а не на GitHub **Source code (zip)**,
 потому что первый содержит понятные `SETUP.cmd` и `FIRST_RUN.cmd`.
 
 ## 5. Перед следующим релизом
