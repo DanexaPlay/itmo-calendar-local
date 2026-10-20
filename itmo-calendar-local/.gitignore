@@ -1,0 +1,47 @@
+# Python
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.egg-info/
+.build/
+build/
+dist/
+.tox/
+.mypy_cache/
+.ruff_cache/
+.coverage*
+htmlcov/
+
+# Private local configuration, credential material and full browser profiles
+.env
+.env.*
+!.env.example
+*.dpapi
+*.sqlite3
+*.sqlite3-*
+*.sqlite3.*
+*.db
+*.db-wal
+*.db-shm
+sync.log*
+*.secret
+*token*.json
+*cookie*.json
+*.har
+playwright/.auth/
+itmo-browser-profile/
+user-data-dir/
+private-*/
+backups/
+data/
+state/
+*.bak
+*.log
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

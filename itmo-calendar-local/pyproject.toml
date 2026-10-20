@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=77,<85", "wheel>=0.45"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "itmo-calendar-local"
+version = "0.5.0"
+description = "Unofficial, local Windows my.itmo timetable to iCloud Calendar sync"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+license = "MIT"
+keywords = ["itmo", "calendar", "icloud", "caldav", "playwright"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: Microsoft :: Windows :: Windows 10",
+    "Operating System :: Microsoft :: Windows :: Windows 11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business :: Scheduling",
+]
+dependencies = [
+    "httpx>=0.28,<0.29",
+    "caldav>=3.0,<4",
+    "icalendar>=6.0,<8",
+    "tzdata>=2025.2,<2028",
+    "pywin32>=306; sys_platform == 'win32'",
+    "playwright==1.57.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.4,<10", "build>=1.2,<2"]
+
+[project.scripts]
+itmo-calendar = "itmo_local.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["itmo_local*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"

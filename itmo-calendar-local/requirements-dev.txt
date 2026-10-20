@@ -1,0 +1,2 @@
+# Local contributors and CI.
+-e .[dev]

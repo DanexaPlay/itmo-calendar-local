@@ -1,0 +1,42 @@
+name: Tests and package checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            python: '3.12'
+          - os: windows-latest
+            python: '3.13'
+          - os: ubuntu-latest
+            python: '3.12'
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - name: Install test dependencies
+        run: python -m pip install -e ".[dev]"
+      - name: Run unit tests (no real accounts)
+        run: python -m pytest -q
+      - name: Run offline synthetic demo
+        run: python -m itmo_local demo
+      - name: Verify clean release archive
+        run: python tools/build_release.py --output dist/itmo-calendar-local-test-windows.zip
+      - name: Build installable Python packages
+        run: python -m build --outdir dist

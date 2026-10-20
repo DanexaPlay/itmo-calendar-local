@@ -1,0 +1,23 @@
+name: Feature request
+description: Suggest an enhancement without including account details.
+title: "[Feature] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem should this solve?
+      description: Describe the user need, not any credentials or real API responses.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed approach
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy
+      options:
+        - label: No personal timetable data, session cookies or passwords included.
+          required: true

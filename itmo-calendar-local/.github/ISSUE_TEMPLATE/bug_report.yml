@@ -1,0 +1,46 @@
+name: Bug report (no personal data)
+description: Report an issue with synthetic details and a safe error code.
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Never attach real timetable JSON, .env, .dpapi, SQLite, browser profile,
+        cookies/tokens, screenshots of browser Network requests, or HAR files.**
+        For a potential security vulnerability, use private vulnerability reporting.
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      placeholder: v0.5.0
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options: [Windows 10, Windows 11, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command and safe error code
+      description: Use only fixed error codes, not full HTTP traces or account details.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+      description: No personal information or credentials.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed secrets, personal schedule details, and browser/network exports.
+          required: true
