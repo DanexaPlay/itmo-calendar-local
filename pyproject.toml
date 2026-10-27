@@ -26,7 +26,7 @@ dependencies = [
     "icalendar>=6.0,<8",
     "tzdata>=2025.2,<2028",
     "pywin32>=306; sys_platform == 'win32'",
-    "playwright==1.57.0",
+    "playwright==1.64.1",
 ]
 
 [project.optional-dependencies]
